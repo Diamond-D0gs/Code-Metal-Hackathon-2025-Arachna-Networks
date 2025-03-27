@@ -1,8 +1,6 @@
 import cv2
 import RNS
 import time
-import math
-import pickle
 import numpy as np
 
 # The announce handler object is responsible for behaving as a callback to announcements from other Reticulum destinations.
