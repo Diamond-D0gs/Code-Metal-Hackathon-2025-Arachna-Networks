@@ -69,7 +69,8 @@ def link_established_callback(link):
 # The payload is larger than the size of a single packet, meaning the server must dice the payload,
 # and send it as sequenced chunks that the client will reconstruct back into the payload
 # once all chunks have been received.
-PACKET_DATA_SIZE = RNS.Packet.ENCRYPTED_MDU - 4 # Sequence data will take up 4 bytes. 2 bytes for payload id, 1 byte for chunk id, and 1 byte for chunk count.
+HEADER_SIZE = 4 # Sequence data will take up 4 bytes. 2 bytes for payload id, 1 byte for packet count, and 1 byte for packet index.
+PACKET_DATA_SIZE = RNS.Packet.ENCRYPTED_MDU - HEADER_SIZE 
 
 image_data = [None] # A temporary buffer for storing completed payload data. It is a list to allow mutability by the "packet_callback" method.
 new_image = [False] # A flag that indicates if a new image is ready to be displayed. It is a list for the same reasons above.
