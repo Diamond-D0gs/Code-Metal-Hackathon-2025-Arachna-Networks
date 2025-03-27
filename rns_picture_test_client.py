@@ -24,7 +24,7 @@ reticulum = RNS.Reticulum()
 
 # Manually create the RNode interface by instantating its interface class and passing radio parameters.
 # Interfaces typically do not have to be created manually as they can be specified in Reticulum's config file,
-# but we chose to manually create out interface here for control reasons.
+# but we chose to manually create our interface here for control reasons.
 rnode_interface = RNS.Interfaces.RNodeInterface.RNodeInterface(
     RNS.Transport,
     {
