@@ -95,12 +95,6 @@ while True:
         # before needing to throttle; else the radio will begin dropping packets and possibly crash.
         if i >= FRAMES_IN_FLIGHT:
             time.sleep(0.65) #Functional delay time based on emperical tests (650ms).
-        RNS.Packet(rns_link, packet_data).send() # Send the packet data through the link.
-
-        # SX1262 based RNodes can only handle ~3 packets being dispatched back to back
-        # before needing to throttle; else the radio will begin dropping packets and possibly crash.
-        if i >= FRAMES_IN_FLIGHT:
-            time.sleep(0.65) # Functional delay time based on emperical tests (650ms).
 
     payload_index += 1
 
