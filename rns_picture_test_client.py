@@ -116,7 +116,7 @@ rns_link.set_packet_callback(packet_callback)
 print("Establishing link...")
 
 # Main loop of the client, wait for a raw image to be displayed, display it once if it arrives, 
-# else run the message loop for the CV2 window and sleep for 100ms.
+# else run the message loop for the CV2 window.
 while True:
     if new_image[0]:
         cv2.imshow('Client', image_data[0])
